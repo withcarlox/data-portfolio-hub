@@ -19,56 +19,57 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
-      
-      {/* Content */}
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-6 animate-fade-in-up">
-            <p className="text-muted-foreground text-lg tracking-widest uppercase font-mono">
-              Olá, eu sou
-            </p>
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
-              <span className="typewriter-cursor font-mono">{displayText}</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-md leading-relaxed">
-              Transformando dados em insights estratégicos para impulsionar decisões de negócio.
-            </p>
-            <div className="flex gap-4 pt-4">
-              <a
-                href="#projetos"
-                className="px-8 py-3 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-all duration-300"
-              >
-                Ver Projetos
-              </a>
-              <a
-                href="#sobre"
-                className="px-8 py-3 border border-foreground/30 text-foreground font-medium rounded-lg hover:bg-foreground/10 transition-all duration-300"
-              >
-                Sobre Mim
-              </a>
-            </div>
-          </div>
+  const navItems = [
+    { label: "Início", href: "#inicio" },
+    { label: "Sobre Mim", href: "#sobre" },
+    { label: "Portfolio", href: "#projetos" },
+    { label: "Contato", href: "#contato" },
+  ];
 
-          {/* Right - Profile Image */}
-          <div className="relative flex justify-center lg:justify-end animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
-            <div className="relative w-[400px] h-[550px] md:w-[500px] md:h-[700px]">
-              <img
-                src={profileImage}
-                alt="Analista de Dados"
-                className="w-full h-full object-contain object-center"
-              />
-            </div>
-          </div>
+  return (
+    <section id="inicio" className="relative min-h-screen bg-background overflow-hidden">
+      {/* Header */}
+      <header className="absolute top-0 left-0 right-0 z-20 px-8 py-6">
+        <div className="container mx-auto flex justify-between items-center">
+          <span className="text-2xl font-bold text-foreground">Portfolio</span>
+          <nav className="hidden md:flex gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-sm tracking-wide"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
+      </header>
+
+      {/* Background Photo */}
+      <div className="absolute inset-0 flex justify-center items-end">
+        <img
+          src={profileImage}
+          alt="Carlos Amaral"
+          className="h-[95vh] w-auto object-contain object-bottom"
+        />
+      </div>
+
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/30" />
+
+      {/* Centered Content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 animate-fade-in-up">
+          Carlos Amaral
+        </h1>
+        <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 font-light">
+          <span className="typewriter-cursor">{displayText}</span>
+        </p>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex justify-center pt-2">
           <div className="w-1 h-2 bg-foreground/50 rounded-full" />
         </div>
