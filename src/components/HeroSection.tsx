@@ -46,12 +46,12 @@ const HeroSection = () => {
         </div>
       </header>
 
-      {/* Background Photo */}
-      <div className="absolute inset-0 flex justify-center items-end">
+      {/* Background Photo - Aligned Right */}
+      <div className="absolute inset-0 flex justify-end items-end">
         <img
           src={profileImage}
           alt="Carlos Amaral"
-          className="h-[95vh] w-auto object-contain object-bottom"
+          className="h-[95vh] w-auto object-contain object-bottom mr-12 lg:mr-24"
         />
       </div>
 
