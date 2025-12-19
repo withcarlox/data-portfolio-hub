@@ -19,12 +19,12 @@ const SkillBar = ({ skill, isVisible, delay }: { skill: Skill; isVisible: boolea
   return (
     <div className="space-y-3">
       <div className="flex justify-between items-center">
-        <span className="text-foreground font-medium font-mono">{skill.name}</span>
-        <span className="text-muted-foreground font-mono text-sm">{skill.level}%</span>
+        <span className="text-black font-medium font-mono">{skill.name}</span>
+        <span className="text-gray-500 font-mono text-sm">{skill.level}%</span>
       </div>
-      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
         <div
-          className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+          className="h-full bg-black rounded-full transition-all duration-1000 ease-out"
           style={{
             width: isVisible ? `${skill.level}%` : "0%",
             transitionDelay: `${delay}ms`,
@@ -57,14 +57,14 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <section id="skills" className="py-24 bg-background" ref={sectionRef}>
+    <section id="skills" className="py-24 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             Tecnologias
           </h2>
-          <div className="w-20 h-1 bg-foreground mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }} />
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="w-20 h-1 bg-black mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }} />
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             Ferramentas e linguagens que utilizo para transformar dados brutos em insights valiosos.
           </p>
 

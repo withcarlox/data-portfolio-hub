@@ -33,31 +33,31 @@ const projects: Project[] = [
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
     <div
-      className="group bg-card border border-border rounded-xl p-6 hover:border-foreground/30 transition-all duration-300 opacity-0 animate-scale-in"
+      className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-gray-400 transition-all duration-300 opacity-0 animate-scale-in shadow-sm"
       style={{ animationDelay: `${index * 150 + 200}ms` }}
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
-        <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-          <span className="text-foreground font-mono font-bold text-lg">
+        <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+          <span className="text-black font-mono font-bold text-lg">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
         <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="p-2 hover:bg-secondary rounded-lg transition-colors" aria-label="Ver no GitHub">
-            <Github className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Ver no GitHub">
+            <Github className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
           </button>
-          <button className="p-2 hover:bg-secondary rounded-lg transition-colors" aria-label="Ver projeto">
-            <ExternalLink className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Ver projeto">
+            <ExternalLink className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
           </button>
         </div>
       </div>
 
       {/* Content */}
-      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-foreground/80 transition-colors">
+      <h3 className="text-xl font-bold text-black mb-3 group-hover:text-gray-700 transition-colors">
         {project.title}
       </h3>
-      <p className="text-muted-foreground leading-relaxed mb-6">
+      <p className="text-gray-600 leading-relaxed mb-6">
         {project.description}
       </p>
 
@@ -66,7 +66,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 bg-secondary text-muted-foreground text-sm font-mono rounded-full"
+            className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-mono rounded-full"
           >
             {tag}
           </span>
@@ -78,13 +78,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 const ProjectsSection = () => {
   return (
-    <section id="projetos" className="py-24 bg-secondary/30">
+    <section id="projetos" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             Projetos
           </h2>
-          <div className="w-20 h-1 bg-foreground mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }} />
+          <div className="w-20 h-1 bg-black mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }} />
 
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
