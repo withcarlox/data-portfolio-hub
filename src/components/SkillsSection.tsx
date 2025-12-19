@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface Skill {
   name: string;
@@ -36,6 +37,7 @@ const SkillBar = ({ skill, isVisible, delay }: { skill: Skill; isVisible: boolea
 };
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -61,11 +63,11 @@ const SkillsSection = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            Tecnologias
+            {t.skills.title}
           </h2>
           <div className="w-20 h-1 bg-black mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }} />
           <p className="text-lg text-gray-600 mb-12 max-w-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            Ferramentas e linguagens que utilizo para transformar dados brutos em insights valiosos.
+            {t.skills.subtitle}
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">

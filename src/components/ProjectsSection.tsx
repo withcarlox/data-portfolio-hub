@@ -1,4 +1,5 @@
 import { ExternalLink, Github } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface Project {
   title: string;
@@ -6,29 +7,6 @@ interface Project {
   tags: string[];
   image?: string;
 }
-
-const projects: Project[] = [
-  {
-    title: "Dashboard de Vendas",
-    description: "Dashboard interativo desenvolvido em Power BI para análise de vendas e performance de equipe comercial.",
-    tags: ["Power BI", "DAX", "SQL"],
-  },
-  {
-    title: "Análise de Churn",
-    description: "Modelo preditivo para identificar clientes com maior probabilidade de cancelamento utilizando Machine Learning.",
-    tags: ["Python", "Scikit-learn", "Pandas"],
-  },
-  {
-    title: "ETL Pipeline",
-    description: "Pipeline de dados automatizado para extração, transformação e carregamento de dados em data warehouse.",
-    tags: ["Python", "Airflow", "PostgreSQL"],
-  },
-  {
-    title: "Relatório Financeiro",
-    description: "Sistema de relatórios automatizados para acompanhamento de indicadores financeiros em tempo real.",
-    tags: ["Excel", "VBA", "Power Query"],
-  },
-];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
@@ -77,17 +55,19 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 };
 
 const ProjectsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="projetos" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            Projetos
+            {t.projects.title}
           </h2>
           <div className="w-20 h-1 bg-black mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }} />
 
           <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
+            {t.projects.list.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
