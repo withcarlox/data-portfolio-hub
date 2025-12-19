@@ -56,18 +56,13 @@ const HeroSection = () => {
 
           {/* Right - Profile Image */}
           <div className="relative flex justify-center lg:justify-end animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
-            <div className="relative w-[350px] h-[500px] md:w-[400px] md:h-[580px] overflow-hidden rounded-2xl">
-              {/* Image with crop to remove bottom logo */}
+            <div className="relative w-[400px] h-[550px] md:w-[500px] md:h-[700px]">
               <img
                 src={profileImage}
                 alt="Analista de Dados"
-                className="absolute w-full h-[110%] object-cover object-top"
+                className="w-full h-full object-contain object-center"
               />
-              {/* Gradient overlay to blend bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -z-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
         </div>
       </div>
