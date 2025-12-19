@@ -58,14 +58,16 @@ const HeroSection = () => {
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-background/30" />
 
-      {/* Centered Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 animate-fade-in-up">
-          Carlos Amaral
-        </h1>
-        <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 font-light">
-          <span className="typewriter-cursor">{displayText}</span>
-        </p>
+      {/* Content - Aligned Right */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-8">
+        <div className="w-full max-w-6xl flex flex-col items-center md:items-end md:pr-[35%] lg:pr-[40%]">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 animate-fade-in-up text-center md:text-right">
+            Carlos Amaral
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 font-light text-center md:text-right">
+            <span className="typewriter-cursor">{displayText}</span>
+          </p>
+        </div>
       </div>
 
       {/* Scroll indicator */}
